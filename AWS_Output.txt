@@ -1,0 +1,75 @@
+C:\Temp\PythonProjects\ForeCast\venv\Scripts\python.exe C:/Temp/PythonProjects/AWS_Sample_PluralSight/venv/amazon-forecast-samples-main/notebooks/basic/Getting_Started/AutoMLCode.py
+{'Predictors': [], 'ResponseMetadata': {'RequestId': 'b1117d3f-3254-4348-88de-3e2a9f58c6be', 'HTTPStatusCode': 200, 'HTTPHeaders': {'content-type': 'application/x-amz-json-1.1', 'date': 'Wed, 25 May 2022 11:12:27 GMT', 'x-amzn-requestid': 'b1117d3f-3254-4348-88de-3e2a9f58c6be', 'content-length': '17', 'connection': 'keep-alive'}, 'RetryAttempts': 0}}
+Creating Role automl-forecast-role...
+The role automl-forecast-role already exists, skipping creation
+Done.
+Success! Created role = automl-forecast-role
+
+Attempting to upload the data to the S3 bucket 'automlforecast' at key 'C:/Temp/PythonProjects/auotml_stuff-main/Datasets/SeasonalData_1Y.csv' ...
+
+Done, the dataset is uploaded to S3 at s3://automlforecast/C:/Temp/PythonProjects/auotml_stuff-main/Datasets/SeasonalData_1Y.csv.
+Creating dataset response...
+Creating dataset arn...
+The Dataset with ARN arn:aws:forecast:us-east-1:617468240911:dataset/AUTOML4 is now ACTIVE.
+*********************** Importing the Dataset ************
+Waiting for Dataset Import Job with ARN arn:aws:forecast:us-east-1:617468240911:dataset-import-job/AUTOML4/AUTOML4 to become ACTIVE. This process could take 5-10 minutes.
+
+Current Status:
+CREATE_PENDING .
+CREATE_IN_PROGRESS .............
+ACTIVE 
+
+
+The Dataset Import Job with ARN arn:aws:forecast:us-east-1:617468240911:dataset-import-job/AUTOML4/AUTOML4 is now ACTIVE.
+**************** Creating a DatasetGroup ***************
+The DatasetGroup with ARN arn:aws:forecast:us-east-1:617468240911:dataset-group/AUTOML4 is now ACTIVE.
+******************Train a predictor************************
+Waiting for Predictor with ARN arn:aws:forecast:us-east-1:617468240911:predictor/AUTOML4_01G3XEV8HCQZC5BTFTD307WER7 to become ACTIVE. Depending on data size and predictor setting，it can take several hours to be ACTIVE.
+
+Current Status:
+CREATE_PENDING .
+CREATE_IN_PROGRESS ................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+ACTIVE 
+
+
+The Predictor with ARN arn:aws:forecast:us-east-1:617468240911:predictor/AUTOML4_01G3XEV8HCQZC5BTFTD307WER7 is now ACTIVE.
+********* Review accuracy metrics ************
+Weighted Quantile Loss (wQL): [
+  {
+    "Quantile": 0.9,
+    "LossValue": 0.011969808393411196
+  },
+  {
+    "Quantile": 0.5,
+    "LossValue": 0.03978417373874345
+  },
+  {
+    "Quantile": 0.1,
+    "LossValue": 0.01557474247739026
+  }
+]
+
+
+Root Mean Square Error (RMSE): 4.756593524565124
+
+
+Weighted Absolute Percentage Error (WAPE): 0.04129458184305274
+
+
+Mean Absolute Percentage Error (MAPE): 0.0412234651325641
+
+
+Mean Absolute Scaled Error (MASE): 0.4937797894629186
+
+*********** Generate forecasts **********************
+Waiting for Forecast with ARN arn:aws:forecast:us-east-1:617468240911:forecast/AUTOML4 to become ACTIVE. Depending on data size and predictor settings，it can take several hours to be ACTIVE.
+
+Current Status:
+CREATE_PENDING 
+CREATE_IN_PROGRESS .........................................................................
+ACTIVE 
+
+
+The Forecast with ARN arn:aws:forecast:us-east-1:617468240911:forecast/AUTOML4 is now ACTIVE.
+
+Process finished with exit code 0
